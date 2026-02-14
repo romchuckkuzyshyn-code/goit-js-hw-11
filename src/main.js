@@ -11,13 +11,13 @@ import {
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
-const lightbox = new SimpleLightbox('.gallery-list a', {
+const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionDelay: 250,
 });
 
 const form = document.querySelector('.form');
-const list = document.querySelector('.gallery-list');
+const list = document.querySelector('.gallery');
 
 form.addEventListener('submit', onClickBtn);
 // list.insertAdjacentHTML('beforeend', createGallery);

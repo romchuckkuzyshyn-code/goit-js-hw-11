@@ -1,5 +1,5 @@
 const loader = document.querySelector('.loader');
-const list = document.querySelector('.gallery-list');
+const list = document.querySelector('.gallery');
 
 export function createGallery({
   likes,
