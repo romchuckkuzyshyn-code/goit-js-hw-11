@@ -1,6 +1,5 @@
-import SimpleLightbox from 'simplelightbox';
-import 'simplelightbox/dist/simple-lightbox.min.css';
-import '../main';
+const loader = document.querySelector('.loader');
+const list = document.querySelector('.gallery-list');
 
 export function createGallery({
   likes,
@@ -12,29 +11,40 @@ export function createGallery({
   largeImageURL,
 }) {
   return `
-        <li>
-          <a href="${webformatURL}"
+        <li class= "gallery-item">
+          <a href="${largeImageURL}"
             ><img src="${webformatURL}" alt="${tags}" />
-            <div class="info">
-              <div class="info-box">
-                <span class="label">Likes</span>
-                <span class="value">${likes}</span>
+            <div class="gallery-info">
+              <div class="gallery-info-box">
+                <span class="gallery-label">Likes</span>
+                <span class="gallery-value">${likes}</span>
               </div>
-              <div class="info-box">
-                <span class="label">Views</span>
-                <span class="value">${views}</span>
+              <div class="gallery-info-box">
+                <span class="gallery-label">Views</span>
+                <span class="gallery-value">${views}</span>
               </div>
-              <div class="info-box">
-                <span class="label">Comments</span>
-                <span class="value">${comments}</span>
+              <div class="gallery-info-box">
+                <span class="gallery-label">Comments</span>
+                <span class="gallery-value">${comments}</span>
               </div>
-              <div class="info-box">
-                <span class="label">Downloads</span>
-                <span class="value">${downloads}</span>
+              <div class="gallery-info-box">
+                <span class="gallery-label">Downloads</span>
+                <span class="gallery-value">${downloads}</span>
               </div>
-            </div></a
+            </div>
+          </a
           >
-        </li>`;
+          </li>`;
 }
 
-list.insertAdjacentHTML('beforeend', createGallery);
+export function clearGallery() {
+  list.innerHTML = '';
+}
+
+export function showLoader() {
+  loader.classList.remove('hidden');
+}
+
+export function hideLoader() {
+  loader.classList.add('hidden');
+}
